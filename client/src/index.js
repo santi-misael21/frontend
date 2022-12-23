@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';//Considerar uso
+import { BrowserRouter, HashRouter } from 'react-router-dom';//Considerar uso
 import { Provider } from 'react-redux';//Se importa Provider
 import store from './redux/newstore/index.js';//Se importa a nuestro store
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,9 +13,11 @@ ReactDOM.render( //Punto 0: se dice que la propiedad store de Provider (la auté
 //tendrá como valor a nuestro store
   <Provider store={store}>
     <React.StrictMode>
-      <BrowserRouter>
+      {/* <BrowserRouter> */}
+      <HashRouter>
         <App />
-      </BrowserRouter>
+      </HashRouter>
+      {/* </BrowserRouter> */}
     </React.StrictMode>
   </Provider>,
   document.getElementById('root')
